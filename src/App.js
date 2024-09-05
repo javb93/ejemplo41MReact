@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Contador from "./Contador";
+import Header from "./Header";
+import { useState } from "react";
+// Componente funcional
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  console.log("Cargando");
+  console.log(isLoading);
+  function handleClick() {
+    console.log("boton presionado");
+    setIsLoading(false);
+    console.log(isLoading);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <Header services="Servicio de ejemplo"></Header>
+      )}
+      <Contador></Contador>
+      <button onClick={handleClick}>- MUESTRA EL HEADER</button>
     </div>
   );
 }
