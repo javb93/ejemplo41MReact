@@ -9,7 +9,13 @@ function Tarea({ tarea }) {
       }}
     >
       <p>{tarea}</p>
-      <button>Eliminar</button>
+      <button
+        onClick={(e) => {
+          e.target.parentElement.remove();
+        }}
+      >
+        Eliminar
+      </button>
     </div>
   );
 }
