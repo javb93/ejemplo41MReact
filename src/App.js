@@ -1,27 +1,16 @@
-import "./App.css";
-import Contador from "./Contador";
-import Header from "./Header";
 import { useState } from "react";
+import "./App.css";
+import AgregarTarea from "./components/AgregarTarea";
+import ListaTareas from "./components/ListaTareas";
+
 // Componente funcional
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  console.log("Cargando");
-  console.log(isLoading);
-  function handleClick() {
-    console.log("boton presionado");
-    setIsLoading(false);
-    console.log(isLoading);
-  }
+  const [tareas, setTareas] = useState([]);
   return (
     <div className="App">
-      {isLoading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <Header services="Servicio de ejemplo"></Header>
-      )}
-      <Contador></Contador>
-      <button onClick={handleClick}>- MUESTRA EL HEADER</button>
+      EN CONSTRUCCION
+      <AgregarTarea setTareas={setTareas}></AgregarTarea>
+      <ListaTareas tareas={tareas}></ListaTareas>
     </div>
   );
 }
