@@ -1,13 +1,6 @@
 function Tarea({ tarea }) {
   return (
-    <div
-      style={{
-        border: "solid blue",
-        borderRadius: "30%",
-        margin: "10px",
-        width: "50%",
-      }}
-    >
+    <div>
       <p>{tarea}</p>
       <button
         onClick={(e) => {

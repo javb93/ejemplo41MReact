@@ -1,10 +1,10 @@
-import Tarea from "./Tarea";
+import { StyledTarea } from "./Styled";
 
 function ListaTareas({ tareas }) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {tareas.map((tarea) => {
-        return <Tarea tarea={tarea} />;
+        return <StyledTarea tarea={tarea} />;
       })}
     </div>
   );
