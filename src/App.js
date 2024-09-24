@@ -10,15 +10,7 @@ function App() {
     <div className="App">
       <NavBar></NavBar>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <TareasPage />
-              <ContactosPage />
-            </>
-          }
-        ></Route>
+        <Route path="/" element={<TareasPage />}></Route>
         <Route path="/contactos" element={<ContactosPage />}></Route>
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
