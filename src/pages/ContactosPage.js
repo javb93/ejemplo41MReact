@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-
+import { useThemeStore } from "../utils/themeStore";
 function ContactosPage() {
   const [contactos, setContactos] = useState([]);
+  const { theme } = useThemeStore();
   /*function getContactos() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -27,7 +28,14 @@ function ContactosPage() {
       <h1>Contactos</h1>
       <ul>
         {contactos.map((contacto) => (
-          <li key={contacto.id}>
+          <li
+            style={{
+              margin: "10px",
+              color: theme === "light" ? "white" : "black",
+              backgroundColor: theme === "light" ? "black" : "white",
+            }}
+            key={contacto.id}
+          >
             {contacto.name} - {contacto.phone}
           </li>
         ))}

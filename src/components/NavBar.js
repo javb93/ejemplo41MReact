@@ -1,12 +1,16 @@
+import { useThemeStore } from "../utils/themeStore";
+import { Link } from "react-router-dom";
 function NavBar() {
+  const { toogleTheme } = useThemeStore();
   return (
     <div style={{ display: "flex", justifyContent: "center", padding: "20px" }}>
       <button style={{ marginRight: "20px" }}>
-        <a href="/">Lista de tareas</a>
+        <Link to="/">Lista de tareas</Link>
       </button>
       <button>
-        <a href="/contactos">Contactos</a>
+        <Link to="/contactos">Contactos</Link>
       </button>
+      <button onClick={toogleTheme}>Cambiar tema</button>
     </div>
   );
 }
